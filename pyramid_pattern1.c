@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+/*
+    *******
+     ******
+      *****
+       ****
+        ***
+         **
+          *
+*/
+
 int main() {
   int width;
   printf("enter the width : ");
