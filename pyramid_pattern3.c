@@ -15,7 +15,6 @@ int main() {
   scanf("%d",&width);
 
   for (int i = 0 ; i < width ; i++) {
-    int l = 0;
     for (int j = 0 ; j < width+i ; j++) {
       if (width-i-1 > j)
             printf(" ");
