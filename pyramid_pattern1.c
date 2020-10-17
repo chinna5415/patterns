@@ -28,10 +28,15 @@ int main() {
 }
 
 !/usr/bin/env bash
-number=11
-if (( number%2 == 0))
-then
-	echo "$number is even"
-else
-	echo "$number is odd"
-fi
+read -p "enter the n (range {1..n})" limit
+  sum=0
+                i=1
+
+                while ((i <= limit))
+                do
+                        sum=$((sum + i))
+                        i=$((i+1))
+                done
+
+                echo "avg : "
+                echo "$sum / $limit" | bc -l
