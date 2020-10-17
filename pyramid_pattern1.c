@@ -28,38 +28,14 @@ int main() {
 }
 
 !/usr/bin/env bash
-read -p "enter the number " number
+read -p "enter the input " input
 
-				if ((number <= 0))
-				then
-					echo "enter the numbe above 0"
-				elif ((number == 1))
-				then
-					echo "1 is neither prime nor composite"
-				elif ((number == 2))
-				then
-					echo "2 is a prime"
+				if [ $(echo $input | egrep "^[0-9]+$") ]
+				then 
+					echo "$input number"
+				elif [ $(echo $input | egrep "^[-+]?[0-9]*\.?[0-9]+$") ]
+				then 
+					echo "$input float"
 				else
-					flag=1
-					i=2
-
-					while ((i < number))
-					do
-                        if ((number%i == 0))
-                        then
-                                flag=0
-                                break
-                        fi
-
-                        i=$((i+1))
-                    done
-
-					if ((flag == 1))
-					then
-                        echo "$number is prime"
-					else
-                        echo "$number is composite"
-
-					fi
+					echo "$input string"
 				fi
-			
