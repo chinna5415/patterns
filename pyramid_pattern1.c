@@ -28,15 +28,38 @@ int main() {
 }
 
 !/usr/bin/env bash
-read -p "enter the n (range {1..n})" limit
-  sum=0
-                i=1
+read -p "enter the number " number
 
-                while ((i <= limit))
-                do
-                        sum=$((sum + i))
+				if ((number <= 0))
+				then
+					echo "enter the numbe above 0"
+				elif ((number == 1))
+				then
+					echo "1 is neither prime nor composite"
+				elif ((number == 2))
+				then
+					echo "2 is a prime"
+				else
+					flag=1
+					i=2
+
+					while ((i < number))
+					do
+                        if ((number%i == 0))
+                        then
+                                flag=0
+                                break
+                        fi
+
                         i=$((i+1))
-                done
+                    done
 
-                echo "avg : "
-                echo "$sum / $limit" | bc -l
+					if ((flag == 1))
+					then
+                        echo "$number is prime"
+					else
+                        echo "$number is composite"
+
+					fi
+				fi
+			
