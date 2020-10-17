@@ -28,12 +28,10 @@ int main() {
 }
 
 !/usr/bin/env bash
-if (( $1 >= $2 && $1 >= $3))
+number=11
+if (( number%2 == 0))
 then
-	echo "$1 is greater"
-elif (($2 >= $1 && $2 >= $3))
-then
-	echo "$2 is greater"
+	echo "$number is even"
 else
-       	echo "$3 is greater"
+	echo "$number is odd"
 fi
