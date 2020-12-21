@@ -10,9 +10,9 @@ section .text:
 
 _start:
 	mov eax, 0x4 			; use the write syscall
-	mov ebx, 1				; use stdout as fd
+	mov ebx, 1			; use stdout as fd
 	mov ecx, message		; use the message as the buffer
-	mov edx, message_length	; and supply the length
+	mov edx, message_length		; and supply the length
 	int 0x80
 
 	; now gracefully exit
